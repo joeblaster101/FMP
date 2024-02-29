@@ -63,7 +63,7 @@ void ARandomLevelSelection::RandomActorSpawn(const FVector& Location, const FRot
 	{
 		UE_LOG(LogTemp, Error, TEXT("Random Number Get Is Not Working"))
 	}
-	out = RandomNumber;
+
 
 }
 
