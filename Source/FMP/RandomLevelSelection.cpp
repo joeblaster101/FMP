@@ -27,12 +27,6 @@ void ARandomLevelSelection::Tick(float DeltaTime)
 
 }
 
-//random int function 
-static int32 GetRandomIntRange(int32 Min, int32 Max)
-{
-	return FMath::RandRange(Min, Max);
-}
-
 
 void ARandomLevelSelection::RandomActorSpawn(const FVector& Location, const FRotator& Rotation, const TArray<TSubclassOf<AActor>> Spawn, int32& out)
 {
