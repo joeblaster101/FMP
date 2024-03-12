@@ -4,17 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "RandomLevelSelection.generated.h"
-
+#include "Door.generated.h"
 
 UCLASS()
-class FMP_API ARandomLevelSelection : public AActor
+class FMP_API ADoor : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	ARandomLevelSelection();
+	ADoor();
 
 protected:
 	// Called when the game starts or when spawned
@@ -23,16 +22,9 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-
+	
 	UFUNCTION(BlueprintCallable)
-	void RandomActorSpawn(const FVector& location, const FRotator& rotation, const TArray<TSubclassOf<AActor>> Spawn, int32& out);
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	TArray<TSubclassOf<AActor>> spawn;
-
-	UFUNCTION(BlueprintCallable)
-	void ForLoopCastDestroy(const TSubclassOf<AActor> input);
+	void IsActorWithKeyCheck(bool& OutputFlow, const AActor* InputActor, const AActor* referance, const bool key);
 
 
 };
