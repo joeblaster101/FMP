@@ -6,6 +6,13 @@
 #include "GameFramework/Actor.h"
 #include "Target.generated.h"
 
+UENUM()
+enum class EFlow : uint8
+{
+	Yes,
+	No
+
+};
 
 
 
@@ -26,7 +33,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	//UFUNCTION(BlueprintCallable, meta = (ExpandEnumAsExecs = "OutputFlow"))
-	//void CheckIsActorBetter(EFlow& OutputFlow, const AActor* InputActor, const AActor* referance);
+	UFUNCTION(BlueprintCallable, meta = (ExpandEnumAsExecs = "OutputFlow"))
+	void CheckIsActorBetter(EFlow& OutputFlow, const AActor* InputActor, const AActor* referance);
 
 };

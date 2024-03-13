@@ -26,15 +26,15 @@ void ATarget::Tick(float DeltaTime)
 
 }
 
-//void ATarget::CheckIsActorBetter(EFlowExecution& OutputFlow, const AActor* InputActor, const AActor* referance)
-//{
-//	if (InputActor == referance)
-//	{
-//		OutputFlow = EFlowExecution::Yes;
-//	}
-//
-//	else
-//	{
-//		OutputFlow = EFlowExecution::No;
-//	}
-//}
+void ATarget::CheckIsActorBetter(EFlow& OutputFlow, const AActor* InputActor, const AActor* referance)
+{
+	if (InputActor == referance)
+	{
+		OutputFlow = EFlow::Yes;
+	}
+
+	else
+	{
+		OutputFlow = EFlow::No;
+	}
+}
