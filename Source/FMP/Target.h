@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "Target.generated.h"
 
+
+
+
 UCLASS()
 class FMP_API ATarget : public AActor
 {
@@ -22,5 +25,8 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	//UFUNCTION(BlueprintCallable, meta = (ExpandEnumAsExecs = "OutputFlow"))
+	//void CheckIsActorBetter(EFlow& OutputFlow, const AActor* InputActor, const AActor* referance);
 
 };

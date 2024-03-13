@@ -10,7 +10,7 @@ UENUM()
 enum class EFlowExecution : uint8
 {
 	Yes,
-	No,
+	No
 
 };
 

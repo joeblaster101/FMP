@@ -2,6 +2,7 @@
 
 
 #include "Target.h"
+#include "Telaporter.h"
 
 // Sets default values
 ATarget::ATarget()
@@ -25,3 +26,15 @@ void ATarget::Tick(float DeltaTime)
 
 }
 
+//void ATarget::CheckIsActorBetter(EFlowExecution& OutputFlow, const AActor* InputActor, const AActor* referance)
+//{
+//	if (InputActor == referance)
+//	{
+//		OutputFlow = EFlowExecution::Yes;
+//	}
+//
+//	else
+//	{
+//		OutputFlow = EFlowExecution::No;
+//	}
+//}

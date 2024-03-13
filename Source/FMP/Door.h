@@ -24,7 +24,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	
 	UFUNCTION(BlueprintCallable)
-	void IsActorWithKeyCheck(bool& OutputFlow, const AActor* InputActor, const AActor* referance, const bool key);
+	void IsActorWithKeyCheck(bool& OutputFlow, const AActor* InputActor, const AActor* referance);
 
 
 };
