@@ -23,4 +23,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION(BlueprintCallable)
+	void WeaponSpawn(const TArray<TSubclassOf<AActor>> Guns, int32& LevelOut, const FVector& Location, const FRotator& Rotation);
+
+
 };
