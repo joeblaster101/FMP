@@ -4,16 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "GunSpawner.generated.h"
+#include "LevlStart.generated.h"
 
 UCLASS()
-class FMP_API AGunSpawner : public AActor
+class FMP_API ALevlStart : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AGunSpawner();
+	ALevlStart();
 
 protected:
 	// Called when the game starts or when spawned
@@ -23,8 +23,10 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+
 	UFUNCTION(BlueprintCallable)
-	void WeaponSpawn(const TArray<TSubclassOf<AActor>> Guns, const int32& CurrentLevel, const FVector& Location, const FRotator& Rotation);
+	void IsActorCheck(bool& OutputFlow, const AActor* InputActor, const AActor* referance);
+
 
 
 };
