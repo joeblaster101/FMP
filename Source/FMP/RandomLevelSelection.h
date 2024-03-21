@@ -25,12 +25,15 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
-	void RandomActorSpawn(const FVector& location, const FRotator& rotation, const TArray<TSubclassOf<AActor>> Spawn, int32& out);
+	void RandomActorSpawn(const FVector& location, const FRotator& rotation, const TArray<TSubclassOf<AActor>> Spawn);
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TArray<TSubclassOf<AActor>> spawn;
 
 	UFUNCTION(BlueprintCallable)
 	void ForLoopCastDestroy(const TSubclassOf<AActor> input);
+
+	UPROPERTY()
+	int32 RandomNumber;
 
 };

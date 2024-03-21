@@ -24,41 +24,24 @@ void ARandomLevelSelection::BeginPlay()
 void ARandomLevelSelection::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	
 }
 
 
-void ARandomLevelSelection::RandomActorSpawn(const FVector& Location, const FRotator& Rotation, const TArray<TSubclassOf<AActor>> Spawn, int32& out)
+void ARandomLevelSelection::RandomActorSpawn(const FVector& Location, const FRotator& Rotation, const TArray<TSubclassOf<AActor>> Spawn)
 {
-	//random number
-	int32 RandomNumber = FMath::RandRange(0, 3);
+	
+		int32 RandomNumber = FMath::RandRange(0, 3);
 
-	if (RandomNumber == 0)
-	{
-		GetWorld()->SpawnActor<AActor>(Spawn[0], Location, Rotation);
-	}
+		GetWorld()->SpawnActor<AActor>(Spawn[RandomNumber], Location, Rotation);
+		
+		TArray<AActor*> FoundActors;
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), Spawn, FoundActors);
 
-	if (RandomNumber == 1)
-	{
-		GetWorld()->SpawnActor<AActor>(Spawn[1], Location, Rotation);
-	}
-
-	if (RandomNumber == 2)
-	{
-		GetWorld()->SpawnActor<AActor>(Spawn[2], Location, Rotation);
-	}
-
-	if (RandomNumber == 3)
-	{
-		GetWorld()->SpawnActor<AActor>(Spawn[3], Location, Rotation);
-	}
-
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Random Number Get Is Not Working"))
-	}
-
-
+		for (int i = 0; i < FoundActors.Num(); i++)
+		{
+			FoundActors[i]->Destroy();
+		}
 }
 
 //romoves actors from world
