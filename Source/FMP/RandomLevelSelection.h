@@ -24,7 +24,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-
 	UFUNCTION(BlueprintCallable)
 	void RandomActorSpawn(const FVector& location, const FRotator& rotation, const TArray<TSubclassOf<AActor>> Spawn, int32& out);
 
@@ -33,6 +32,5 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void ForLoopCastDestroy(const TSubclassOf<AActor> input);
-
 
 };
