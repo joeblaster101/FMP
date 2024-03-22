@@ -38,10 +38,6 @@ void ARandomLevelSelection::RandomActorSpawn(const FVector& Location, const FRot
 		TArray<AActor*> FoundActors;
 		UGameplayStatics::GetAllActorsOfClass(GetWorld(), Spawn, FoundActors);
 
-		for (int i = 0; i < FoundActors.Num(); i++)
-		{
-			FoundActors[i]->Destroy();
-		}
 }
 
 //romoves actors from world
