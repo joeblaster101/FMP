@@ -30,14 +30,27 @@ void ARandomLevelSelection::Tick(float DeltaTime)
 
 void ARandomLevelSelection::RandomActorSpawn(const FVector& Location, const FRotator& Rotation, const TArray<TSubclassOf<AActor>> Spawn)
 {
-	
-		int32 RandomNumber = FMath::RandRange(0, 3);
+		int32 Random = FMath::RandRange(0, 3);
 
-		GetWorld()->SpawnActor<AActor>(Spawn[RandomNumber], Location, Rotation);
+		if (Random == 0)
+		{
+			GetWorld()->SpawnActor<AActor>(Spawn[0], Location, Rotation);
+		}
+
+		if (Random == 1)
+		{
+			GetWorld()->SpawnActor<AActor>(Spawn[1], Location, Rotation);
+		}
+
+		if (Random == 2)
+		{
+			GetWorld()->SpawnActor<AActor>(Spawn[2], Location, Rotation);
+		}
 		
-		TArray<AActor*> FoundActors;
-		UGameplayStatics::GetAllActorsOfClass(GetWorld(), Spawn, FoundActors);
-
+		if (Random == 3)
+		{
+			GetWorld()->SpawnActor<AActor>(Spawn[3], Location, Rotation);
+		}
 }
 
 //romoves actors from world
