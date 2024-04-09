@@ -25,12 +25,21 @@ void ADoor::Tick(float DeltaTime)
 
 }
 
-void ADoor::IsActorWithKeyCheck(bool& OutputFlow, const AActor* InputActor, const AActor* referance)
+void ADoor::IsActorCheck(bool& OutputFlow, const AActor* InputActor, const AActor* referance, const bool Key)
 {
-
-
+	bool IsActor;
 
 	if (Cast<AActor>(InputActor) == Cast<AActor>(referance))
+	{
+		IsActor = true;
+	}
+
+	else
+	{
+		IsActor = false;
+	}
+
+	if (Key == true && IsActor == true)
 	{
 		OutputFlow = true;
 	}
@@ -39,5 +48,6 @@ void ADoor::IsActorWithKeyCheck(bool& OutputFlow, const AActor* InputActor, cons
 	{
 		OutputFlow = false;
 	}
+
 }
 	

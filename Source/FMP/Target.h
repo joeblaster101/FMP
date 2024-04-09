@@ -34,6 +34,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable, meta = (ExpandEnumAsExecs = "OutputFlow"))
-	void CheckIsActorBetter(EFlow& OutputFlow, const AActor* InputActor, const AActor* referance);
+	void CheckIsActor(EFlow& OutputFlow, const AActor* InputActor, const AActor* referance);
 
 };

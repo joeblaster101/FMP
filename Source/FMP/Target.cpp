@@ -26,7 +26,7 @@ void ATarget::Tick(float DeltaTime)
 
 }
 
-void ATarget::CheckIsActorBetter(EFlow& OutputFlow, const AActor* InputActor, const AActor* referance)
+void ATarget::CheckIsActor(EFlow& OutputFlow, const AActor* InputActor, const AActor* referance)
 {
 	if (InputActor == referance)
 	{
