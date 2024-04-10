@@ -25,17 +25,18 @@ void AGunSpawner::Tick(float DeltaTime)
 
 }
 
-void AGunSpawner::WeaponSpawn(const TArray<TSubclassOf<AActor>> Guns, const int32& CurrentLevel, const FVector& Location, const FRotator& Rotation)
+void AGunSpawner::WeaponSpawn(const int32& CurrentLevel, const FVector& Location, const FRotator& Rotation)
 {
 	
-	if (Guns.IsValidIndex(CurrentLevel))
+	
+	if (weapons.IsValidIndex(CurrentLevel))
 	{
-		UE_LOG(LogTemp, Error, TEXT("null referance"))
+		GetWorld()->SpawnActor<AActor>(weapons[CurrentLevel], Location, Rotation);
 	}
 	
 	else
 	{
-		GetWorld()->SpawnActor<AActor>(Guns[CurrentLevel], Location, Rotation);
+		UE_LOG(LogTemp, Error, TEXT("null referance"));
 	}
 
 }

@@ -24,7 +24,8 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
-	void WeaponSpawn(const TArray<TSubclassOf<AActor>> Guns, const int32& CurrentLevel, const FVector& Location, const FRotator& Rotation);
+	void WeaponSpawn(const int32& CurrentLevel, const FVector& Location, const FRotator& Rotation);
 
-
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TArray<TSubclassOf<AActor>> weapons;
 };
