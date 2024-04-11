@@ -50,4 +50,3 @@ void ADoor::IsActorCheck(bool& OutputFlow, const AActor* InputActor, const AActo
 	}
 
 }
-	
