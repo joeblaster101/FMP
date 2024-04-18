@@ -18,6 +18,8 @@ void ARandomLevelSelection::BeginPlay()
 {
 	Super::BeginPlay();
 	
+
+
 }
 
 // Called every frame
@@ -30,33 +32,29 @@ void ARandomLevelSelection::Tick(float DeltaTime)
 
 void ARandomLevelSelection::RandomActorSpawn(const FVector& Location, const FRotator& Rotation, const TArray<TSubclassOf<AActor>> Spawn)
 {
+
+
 	int32 Random = FMath::RandRange(0, 3);
-	int32 One = 0;
-	int32 Two = 0;
-	int32 Three = 0;
-	int32 Four = 0;
-
-
 
 
 		if (Random == 0)
 		{
-			GetWorld()->SpawnActor<AActor>(Spawn[One], Location, Rotation);
+			GetWorld()->SpawnActor<AActor>(Spawn[Numbers[0]], Location, Rotation);
 		}
 
 		if (Random == 1)
 		{
-			GetWorld()->SpawnActor<AActor>(Spawn[Two], Location, Rotation);
+			GetWorld()->SpawnActor<AActor>(Spawn[Numbers[1]], Location, Rotation);
 		}
 
 		if (Random == 2)
 		{
-			GetWorld()->SpawnActor<AActor>(Spawn[Three], Location, Rotation);
+			GetWorld()->SpawnActor<AActor>(Spawn[Numbers[2]], Location, Rotation);
 		}
 		
 		if (Random == 3)
 		{
-			GetWorld()->SpawnActor<AActor>(Spawn[Four], Location, Rotation);
+			GetWorld()->SpawnActor<AActor>(Spawn[Numbers[3]], Location, Rotation);
 		}
 }
 

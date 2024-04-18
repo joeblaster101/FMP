@@ -33,7 +33,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void ForLoopCastDestroy(const TSubclassOf<AActor> input);
 
-	UPROPERTY()
-	int32 RandomNumber;
-
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TArray<int32> Numbers;
 };
