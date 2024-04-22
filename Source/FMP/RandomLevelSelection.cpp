@@ -33,7 +33,6 @@ void ARandomLevelSelection::Tick(float DeltaTime)
 void ARandomLevelSelection::RandomActorSpawn(const FVector& Location, const FRotator& Rotation, const TArray<TSubclassOf<AActor>> Spawn)
 {
 
-
 	int32 Random = FMath::RandRange(0, 3);
 
 
