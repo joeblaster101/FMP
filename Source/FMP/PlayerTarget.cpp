@@ -18,23 +18,24 @@ void APlayerTarget::BeginPlay()
 
 void APlayerTarget::Tick(float DeltaTime)
 {
+	if (Player != nullptr)
+	{
+		PlayerLocation = Player->GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+		SelfLocation = GetActorLocation();
+	}
 }
 
-
-
-void APlayerTarget::IsTarget(const AActor * referance, const AActor* Player, const bool IsLineOfSight, const FVector PlayerLocation, bool IsWorking)
+void APlayerTarget::Target()
 {
 	FRotator Rotation(0.0f, 0.0f, 0.0f);
 
-	if (referance == nullptr && Player == referance && IsLineOfSight == true)
-	{	
+	if (HasSeen == true && Player == nullptr)
+	{		
 		SetActorLocationAndRotation(PlayerLocation, Rotation, false, 0, ETeleportType::None);
-		IsWorking = true;
 	}
 	
 	else
 	{
-		IsWorking = false;
+		UE_LOG(LogTemp, Error, TEXT("somthings scrood"));
 	}
-
 }

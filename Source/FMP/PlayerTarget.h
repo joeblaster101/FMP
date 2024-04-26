@@ -24,10 +24,18 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
-	void IsTarget(const AActor* referance, const AActor* Player, const bool IsLineOfSight, const FVector PlayerLocation, bool IsWorking);
+	void Target();
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	bool HasSeen;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	FVector PlayerLocation;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	AActor* Player;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	FVector SelfLocation;
 
 };
