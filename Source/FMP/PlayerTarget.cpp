@@ -29,7 +29,7 @@ void APlayerTarget::Target()
 {
 	FRotator Rotation(0.0f, 0.0f, 0.0f);
 
-	if (HasSeen == true && Player == nullptr)
+	if (HasSeen == true && Player != nullptr)
 	{		
 		SetActorLocationAndRotation(PlayerLocation, Rotation, false, 0, ETeleportType::None);
 	}
