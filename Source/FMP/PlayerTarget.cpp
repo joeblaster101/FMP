@@ -14,11 +14,13 @@ APlayerTarget::APlayerTarget()
 
 void APlayerTarget::BeginPlay()
 {
+	Super::BeginPlay();
+
 }
 
 void APlayerTarget::Tick(float DeltaTime)
 {
-
+	Super::Tick(DeltaTime);
 }
 
 void APlayerTarget::Target()
