@@ -31,7 +31,7 @@ void APlayerTarget::Target()
 
 	if (HasSeen == true && Player != nullptr)
 	{		
-		SetActorLocationAndRotation(PlayerLocation, Rotation, false, 0, ETeleportType::None);
+		SetActorLocation(PlayerLocation, false, 0, ETeleportType::None);
 	}
 	
 	else
