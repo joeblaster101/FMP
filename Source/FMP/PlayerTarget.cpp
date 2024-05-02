@@ -18,18 +18,13 @@ void APlayerTarget::BeginPlay()
 
 void APlayerTarget::Tick(float DeltaTime)
 {
-	if (Player != nullptr)
-	{
-		PlayerLocation = Player->GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
-		SelfLocation = GetActorLocation();
-	}
+
 }
 
 void APlayerTarget::Target()
 {
-	FRotator Rotation(0.0f, 0.0f, 0.0f);
 
-	if (HasSeen == true && Player != nullptr)
+	if (HasSeen == true)
 	{		
 		SetActorLocation(PlayerLocation, false, 0, ETeleportType::None);
 	}

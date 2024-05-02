@@ -33,9 +33,6 @@ public:
 	FVector PlayerLocation;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	AActor* Player;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	FVector SelfLocation;
 
 };
