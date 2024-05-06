@@ -25,7 +25,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
-	void RandomActorSpawn(const FVector& location, const FRotator& rotation, const TArray<TSubclassOf<AActor>> Spawn);
+	void RandomActorSpawn(const FVector& location, const FRotator& rotation, const TArray<TSubclassOf<AActor>> Spawn, const bool ShouldSpawn);
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TArray<TSubclassOf<AActor>> spawn;
@@ -35,4 +35,5 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TArray<int32> Numbers;
+
 };

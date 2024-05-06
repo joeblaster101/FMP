@@ -30,31 +30,43 @@ void ARandomLevelSelection::Tick(float DeltaTime)
 }
 
 
-void ARandomLevelSelection::RandomActorSpawn(const FVector& Location, const FRotator& Rotation, const TArray<TSubclassOf<AActor>> Spawn)
+void ARandomLevelSelection::RandomActorSpawn(const FVector& Location, const FRotator& Rotation, const TArray<TSubclassOf<AActor>> Spawn, const bool ShouldSpawn)
 {
 
 	int32 Random = FMath::RandRange(0, 3);
 
+
+	if (ShouldSpawn == true)
+	{
 
 		if (Random == 0)
 		{
 			GetWorld()->SpawnActor<AActor>(Spawn[Numbers[0]], Location, Rotation);
 		}
 
-		if (Random == 1)
+		else if (Random == 1)
 		{
 			GetWorld()->SpawnActor<AActor>(Spawn[Numbers[1]], Location, Rotation);
 		}
 
-		if (Random == 2)
+		else if (Random == 2)
 		{
 			GetWorld()->SpawnActor<AActor>(Spawn[Numbers[2]], Location, Rotation);
 		}
-		
-		if (Random == 3)
+
+		else if (Random == 3)
 		{
 			GetWorld()->SpawnActor<AActor>(Spawn[Numbers[3]], Location, Rotation);
 		}
+
+	}
+
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Didn't"));
+	}
+
+
 }
 
 //romoves actors from world
